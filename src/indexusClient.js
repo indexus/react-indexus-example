@@ -20,8 +20,11 @@ export function createIndexus(
     const dimension = space.dimension(i);
 
     options[dimension.name()] = {
-      origin: dimension.newPoint(origin[i]),
-      filters: dimension.newFilter(filters[i][0], filters[i][1]),
+      origin: dimension.newPoint(origin[dimension.name()]),
+      filters: dimension.newFilter(
+        filters[dimension.name()][0],
+        filters[dimension.name()][1]
+      ),
     };
   }
 
