@@ -1,12 +1,5 @@
-// Function to convert ArrayBuffer to Hex String
-const arrayBufferToHex = (buffer) => {
-  const byteArray = new Uint8Array(buffer);
-  const hexCodes = [...byteArray].map((value) => {
-    const hexCode = value.toString(16);
-    return hexCode.padStart(2, "0");
-  });
-  return hexCodes.join("");
-};
+import SHA256 from "crypto-js/sha256";
+import Hex from "crypto-js/enc-hex";
 
 const hexToBytes = (hex) => {
   const bytes = [];
@@ -21,11 +14,10 @@ export const sha256 = async (message) => {
   const encoder = new TextEncoder();
   const data = encoder.encode(message);
 
-  // Perform the hash
-  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+  const hash = SHA256(data);
 
-  // Convert the hash to hex
-  const hashHex = arrayBufferToHex(hashBuffer);
+  // Convert the hash to a hex string
+  const hashHex = hash.toString(Hex);
 
   return hexToBytes(hashHex);
 };

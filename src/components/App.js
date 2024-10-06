@@ -99,7 +99,6 @@ const App = () => {
         await indexusInstance.addItem(item);
         console.log("Item added to the Indexus locality.");
       }
-      alert("Item added successfully!");
       setItemMessage("");
       setItemAuthor("");
     } catch (error) {

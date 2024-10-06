@@ -1,5 +1,5 @@
 {
-  "name": "indexus-demo",
+  "name": "react-indexus-example",
   "version": "0.1.0",
   "private": true,
   "peerDependencies": {
@@ -15,6 +15,7 @@
     "@testing-library/user-event": "^13.5.0",
     "buffer": "^6.0.3",
     "crypto": "^1.0.1",
+    "crypto-js": "^4.2.0",
     "ipfs-http-client": "^60.0.1",
     "js-indexus-sdk": "^1.0.15",
     "react": "^18.3.1",
